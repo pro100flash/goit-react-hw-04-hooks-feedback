@@ -19,7 +19,7 @@ export default function App() {
     return Math.round((good / countTotalFeedback()) * 100);
   };
 
-  const handleChangeStatistics = (e) => {
+  const onClick = (e) => {
     switch (e.target.name) {
       case "good":
         setGood((prevState) => prevState + 1);
@@ -39,10 +39,7 @@ export default function App() {
   return (
     <div>
       <Section title="Please leave feedback">
-        <FeedbackOptions
-          options={ANSWER_OPTIONS}
-          onLeaveFeedback={handleChangeStatistics}
-        />
+        <FeedbackOptions options={ANSWER_OPTIONS} onLeaveFeedback={onClick} />
       </Section>
 
       <Section title="Statistic">
